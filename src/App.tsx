@@ -1,9 +1,22 @@
-import React from "react"
-
-import { UploadFile } from "./components/UploadFile"
+import React, { useState } from 'react';
 
 function App() {
-  return <UploadFile title="Upload file" />
+  const [userName, setUserName] = useState('');
+
+  return (
+    <>
+      <form>
+        <input
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          placeholder="user name"
+        />
+      </form>
+
+      <p>User name: {userName}</p>
+    </>
+  );
 }
 
-export default App
+export default App;
