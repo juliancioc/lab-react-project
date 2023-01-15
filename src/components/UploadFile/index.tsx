@@ -16,7 +16,7 @@ export const UploadFile = ({ title }: UploadFileProps) => {
     const fileURL = URL.createObjectURL(newFile);
 
     validFileSize(newFile.size);
-    validFileExtension(newFile.name);
+    validFileType(newFile.name);
     setFile({ ...file, name: newFile.name, url: fileURL });
   };
 
@@ -29,11 +29,11 @@ export const UploadFile = ({ title }: UploadFileProps) => {
     }
   };
 
-  const validFileExtension = (fileName: string) => {
+  const validFileType = (fileName: string) => {
     const index = fileName.indexOf('.');
-    const extension = fileName.substring(index);
+    const type = fileName.substring(index);
 
-    if (extension !== '.xlsx') {
+    if (type !== '.xlsx') {
       return alert('invalid file');
     }
   };
