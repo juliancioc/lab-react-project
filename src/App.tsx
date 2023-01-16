@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import { Pokemon } from './view/Pokemon';
 
 function App() {
-  const [userName, setUserName] = useState('');
-
   return (
     <>
-      <form>
-        <input
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          placeholder="user name"
-        />
-      </form>
-
-      <p>User name: {userName}</p>
+      <Pokemon />
     </>
   );
 }
