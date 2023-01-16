@@ -9,8 +9,6 @@ export const Pokemon = () => {
   const dispatch = useDispatch();
   const { pokemons } = useSelector((state: RootState) => state.pokemons);
 
-  console.log('pokemons', pokemons);
-
   useEffect(() => {
     dispatch(getPokemons());
   }, [dispatch]);
